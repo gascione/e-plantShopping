@@ -42,7 +42,10 @@ dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }));
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-  };
+  const price = parseFloat(item.cost.substring(1)); // Remueve el signo $ y convierte a número
+  return (price * item.quantity).toFixed(2); // Retorna el total con dos decimales
+};
+
 
   return (
     <div className="cart-container">
